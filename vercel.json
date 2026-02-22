@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/clean/(.*)",
+      "destination": "/clean/index.html"
+    }
+  ]
+}
