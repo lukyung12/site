@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 function Contact() {
@@ -9,6 +9,17 @@ function Contact() {
     message: ''
   })
   const [status, setStatus] = useState('')
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme')
+    if (theme) setDarkMode(theme === 'dark')
+  }, [])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light')
+  }, [darkMode])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -42,6 +53,9 @@ function Contact() {
             <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
               📱 +256 788010587
             </a>
+            <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
+              {darkMode ? '☀️' : '🌙'}
+            </button>
           </div>
         </div>
       </header>

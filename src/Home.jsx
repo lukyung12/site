@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 function Home() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    const theme = localStorage.getItem('theme')
+    if (theme) setDarkMode(theme === 'dark')
+  }, [])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light')
+  }, [darkMode])
+
   return (
     <div className="app-container">
       <div className="animated-bg">
@@ -23,6 +35,9 @@ function Home() {
               <a href="#about">About</a>
               <Link to="/contact">Contact</Link>
             </nav>
+            <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
+              {darkMode ? '☀️' : '🌙'}
+            </button>
           </div>
         </div>
       </header>
