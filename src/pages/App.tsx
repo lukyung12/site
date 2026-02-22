@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 import './App.css';
 
 function App() {
@@ -12,21 +14,7 @@ function App() {
         <div className="bubble"></div>
       </div>
       
-      <header className="header">
-        <div className="header-content">
-          <h1 className="logo">Cathy Cleans</h1>
-          <div className="header-right">
-            <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
-              📱 +256 788010587
-            </a>
-            <nav className="nav">
-              <a href="#services">Services</a>
-              <a href="#about">About</a>
-              <Link to="/contact">Contact</Link>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <section className="hero">
         <div className="hero-content">
@@ -97,29 +85,7 @@ function App() {
         <Link to="/contact" className="cta-button">Schedule Now</Link>
       </section>
 
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3>Contact Us</h3>
-            <p>📧 cathycleans@example.com</p>
-            <p>📱 +256 788010587</p>
-          </div>
-          <div className="footer-section">
-            <h3>Working Hours</h3>
-            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-            <p>Saturday: 9:00 AM - 4:00 PM</p>
-            <p>Sunday: Closed</p>
-          </div>
-          <div className="footer-section">
-            <h3>Service Areas</h3>
-            <p>Kampala & Surrounding Areas</p>
-            <p>Professional Cleaning Services</p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2024 Cathy Cleans. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

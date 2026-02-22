@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Header from '../components/layout/Header';
 import './Contact.css';
 
 function Contact() {
@@ -37,16 +37,7 @@ function Contact() {
         <div className="particle"></div>
       </div>
       
-      <header className="header">
-        <div className="header-content">
-          <Link to="/" className="logo">Cathy Cleans</Link>
-          <div className="header-right">
-            <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
-              📱 +256 788010587
-            </a>
-          </div>
-        </div>
-      </header>
+      <Header variant="contact" />
 
       <div className="contact-container">
         <h1>Contact Us</h1>
