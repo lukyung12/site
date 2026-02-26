@@ -39,7 +39,7 @@ function Home() {
       <header className="header">
         <div className="header-content">
           <div className="logo-container">
-            <img src="/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
+            <img src="/site/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
             <h1 className="logo">TIDY SPACES</h1>
           </div>
         </div>
@@ -52,8 +52,8 @@ function Home() {
             <Link to="/contact" className="cta-button">Get a Free Quote</Link>
           </div>
           <div className="hero-images">
-            <img src="/images/ceiling-1.jpeg" alt="Ceiling cleaning" className="hero-image" />
-            <img src="/images/paver-1.jpeg" alt="Paver cleaning" className="hero-image" />
+            <img src="/site/images/ceiling-1.jpeg" alt="Ceiling cleaning" className="hero-image" />
+            <img src="/site/images/paver-1.jpeg" alt="Paver cleaning" className="hero-image" />
           </div>
         </div>
       </section>
