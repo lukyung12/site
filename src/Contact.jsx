@@ -9,11 +9,13 @@ function Contact() {
     message: ''
   })
   const [status, setStatus] = useState('')
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
-    if (theme) setDarkMode(theme === 'dark')
+    if (theme) {
+      setDarkMode(theme === 'dark')
+    }
   }, [])
 
   useEffect(() => {
@@ -25,7 +27,7 @@ function Contact() {
     e.preventDefault()
     setStatus('sending')
     
-    const mailtoLink = `mailto:your-email@example.com?subject=Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
+    const mailtoLink = `mailto:tidyspacesug@gmail.com?subject=Inquiry from ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0APhone: ${formData.phone}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`
     window.location.href = mailtoLink
     
     setStatus('sent')
@@ -46,17 +48,19 @@ function Contact() {
         <div className="particle"></div>
         <div className="particle"></div>
       </div>
+      <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
+        📱 +256 788010587
+      </a>
+      <button className="theme-toggle-fixed" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
+        {darkMode ? '☀️' : '🌙'}
+      </button>
+      <Link to="/" className="home-link-fixed">Home</Link>
       <header className="header">
         <div className="header-content">
-          <Link to="/" className="logo">Cathy Cleans</Link>
-          <div className="header-right">
-            <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
-              📱 +256 788010587
-            </a>
-            <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
-              {darkMode ? '☀️' : '🌙'}
-            </button>
-          </div>
+          <Link to="/" className="logo-container">
+            <img src="/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
+            <h1 className="logo">TIDY SPACES</h1>
+          </Link>
         </div>
       </header>
       <div className="contact-container">

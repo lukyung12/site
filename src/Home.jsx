@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 function Home() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
-    if (theme) setDarkMode(theme === 'dark')
+    if (theme) {
+      setDarkMode(theme === 'dark')
+    }
   }, [])
 
   useEffect(() => {
@@ -23,29 +25,36 @@ function Home() {
         <div className="bubble"></div>
         <div className="bubble"></div>
       </div>
+      <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
+        📱 +256 788010587
+      </a>
+      <button className="theme-toggle-fixed" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
+        {darkMode ? '☀️' : '🌙'}
+      </button>
+      <nav className="nav-fixed">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <Link to="/contact">Contact</Link>
+      </nav>
       <header className="header">
         <div className="header-content">
-          <h1 className="logo">Cathy Cleans</h1>
-          <div className="header-right">
-            <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
-              📱 +256 788010587
-            </a>
-            <nav className="nav">
-              <a href="#services">Services</a>
-              <a href="#about">About</a>
-              <Link to="/contact">Contact</Link>
-            </nav>
-            <button className="theme-toggle" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
-              {darkMode ? '☀️' : '🌙'}
-            </button>
+          <div className="logo-container">
+            <img src="/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
+            <h1 className="logo">TIDY SPACES</h1>
           </div>
         </div>
       </header>
       <section className="hero">
         <div className="hero-content">
-          <h2 className="hero-title">Professional Cleaning Services</h2>
-          <p className="hero-subtitle">Sparkling clean homes and offices, every time</p>
-          <Link to="/contact" className="cta-button">Get a Free Quote</Link>
+          <div className="hero-text">
+            <h2 className="hero-title">Professional Cleaning Services</h2>
+            <p className="hero-subtitle">Sparkling clean homes and offices, every time</p>
+            <Link to="/contact" className="cta-button">Get a Free Quote</Link>
+          </div>
+          <div className="hero-images">
+            <img src="/images/ceiling-1.jpeg" alt="Ceiling cleaning" className="hero-image" />
+            <img src="/images/paver-1.jpeg" alt="Paver cleaning" className="hero-image" />
+          </div>
         </div>
       </section>
       <section id="services" className="services">
@@ -110,7 +119,7 @@ function Home() {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Contact Us</h3>
-            <p>📧 cathycleans@example.com</p>
+            <p>📧 tidyspacesug@gmail.com</p>
             <p>📱 +256 788010587</p>
           </div>
           <div className="footer-section">
