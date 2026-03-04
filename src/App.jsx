@@ -4,7 +4,7 @@ function App() {
   return (
     <div>
       <h1>Cathy Cleans</h1>
-      <p>Welcome to our cleaning service!</p>
+      <p>Welcome to Tidy Spaces (U) Ltd!</p>
     </div>
   )
 }
