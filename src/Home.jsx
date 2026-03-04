@@ -39,7 +39,7 @@ function Home() {
       <header className="header">
         <div className="header-content">
           <div className="logo-container">
-            <img src="/site/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
+            <img src="/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
             <h1 className="logo">TIDY SPACES</h1>
           </div>
         </div>
@@ -48,12 +48,12 @@ function Home() {
         <div className="hero-content">
           <div className="hero-text">
             <h2 className="hero-title">Professional Cleaning Services</h2>
-            <p className="hero-subtitle">Sparkling clean homes and offices, every time</p>
+            <p className="hero-subtitle">Tidy Spaces (U) Ltd is a full-service cleaning company committed to delivering top notch cleaning solutions to both residential and commercial clients. We offer a wide range of services customized to meet the unique needs of our clients with plans for regional expansion </p>
             <Link to="/contact" className="cta-button">Get a Free Quote</Link>
           </div>
           <div className="hero-images">
-            <img src="/site/images/ceiling-1.jpeg" alt="Ceiling cleaning" className="hero-image" />
-            <img src="/site/images/paver-1.jpeg" alt="Paver cleaning" className="hero-image" />
+            <img src="/images/ceiling-1.jpeg" alt="Ceiling cleaning" className="hero-image" />
+            <img src="/images/paver-1.jpeg" alt="Paver cleaning" className="hero-image" />
           </div>
         </div>
       </section>
@@ -68,17 +68,17 @@ function Home() {
           <div className="service-card">
             <div className="service-icon">🏢</div>
             <h3>Commercial Cleaning</h3>
-            <p>Professional office and business space cleaning</p>
+            <p>Professional office, retail, warehouse and business space cleaning</p>
           </div>
           <div className="service-card">
             <div className="service-icon">✨</div>
-            <h3>Deep Cleaning</h3>
+            <h3>Domestic Deep Cleaning and regular maintenance</h3>
             <p>Thorough cleaning for every corner of your space</p>
           </div>
           <div className="service-card">
             <div className="service-icon">🪟</div>
-            <h3>Window Cleaning</h3>
-            <p>Crystal clear windows inside and out</p>
+            <h3>Window and rooftop cleaning</h3>
+            <p>Crystal clear windows and rooftile cleaning inside and out</p>
           </div>
         </div>
       </section>
@@ -90,7 +90,7 @@ function Home() {
               <span className="feature-icon">✓</span>
               <div>
                 <h3>Experienced Team</h3>
-                <p>Years of professional cleaning expertise</p>
+                <p>Quality is the heart of what we do with years of professional cleaning expertise </p>
               </div>
             </div>
             <div className="feature">
@@ -135,7 +135,7 @@ function Home() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>© 2024 Cathy Cleans. All rights reserved.</p>
+          <p>© 2026 Tidy Spaces. All rights reserved.</p>
         </div>
       </footer>
     </div>

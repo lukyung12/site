@@ -6,9 +6,11 @@ import Home from './Home'
 import Contact from './Contact'
 import './index.css'
 
+const basename = import.meta.env.MODE === 'production' ? '/site' : '/'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/site">
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
