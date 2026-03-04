@@ -6,7 +6,7 @@ import Home from './Home'
 import Contact from './Contact'
 import './index.css'
 
-const basename = '/'
+const basename = '/site'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
