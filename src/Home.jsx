@@ -2,18 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 function Home() {
-  const [darkMode, setDarkMode] = useState(false)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [lightboxOpen, setLightboxOpen] = useState(false)
-  const [lightboxImage, setLightboxImage] = useState('')
-  
-  const images = [
-    '/images/ceiling.jpeg',
-    '/images/pavers 1.jpeg',
-    '/images/cleaning-service 1.jpeg',
-    '/images/house cleaning.jpg',
-    '/images/House-Cleaning-2.jpg'
-  ]
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
@@ -27,13 +16,6 @@ function Home() {
     localStorage.setItem('theme', darkMode ? 'dark' : 'light')
   }, [darkMode])
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length)
-    }, 3000)
-    return () => clearInterval(interval)
-  }, [])
-
   return (
     <div className="app-container">
       <div className="animated-bg">
@@ -43,6 +25,9 @@ function Home() {
         <div className="bubble"></div>
         <div className="bubble"></div>
       </div>
+      <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
+        📱 +256 788010587
+      </a>
       <button className="theme-toggle-fixed" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
         {darkMode ? '☀️' : '🌙'}
       </button>
@@ -66,20 +51,10 @@ function Home() {
             <p className="hero-subtitle">Tidy Spaces (U) Ltd is a full-service cleaning company committed to delivering top notch cleaning solutions to both residential and commercial clients. We offer a wide range of services customized to meet the unique needs of our clients with plans for regional expansion </p>
             <Link to="/contact" className="cta-button">Get a Free Quote</Link>
           </div>
-        </div>
-        <div className="hero-images">
-          <img 
-            src={images[currentImageIndex]} 
-            alt="Cleaning service" 
-            className="hero-image" 
-            onClick={() => { setLightboxImage(images[currentImageIndex]); setLightboxOpen(true); }}
-          />
-          <img 
-            src={images[(currentImageIndex + 1) % images.length]} 
-            alt="Cleaning service" 
-            className="hero-image"
-            onClick={() => { setLightboxImage(images[(currentImageIndex + 1) % images.length]); setLightboxOpen(true); }}
-          />
+          <div className="hero-images">
+            <img src="/images/ceiling.jpeg" alt="Ceiling cleaning" className="hero-image" />
+            <img src="/images/pavers 1.jpeg" alt="Paver cleaning" className="hero-image" />
+          </div>
         </div>
       </section>
       <section id="services" className="services">
@@ -114,6 +89,7 @@ function Home() {
             <div className="feature">
               <span className="feature-icon">✓</span>
               <div>
+                
                 <h3>Experienced Team</h3>
                 <p>Quality is the heart of what we do with years of professional cleaning expertise </p>
               </div>
@@ -145,9 +121,7 @@ function Home() {
           <div className="footer-section">
             <h3>Contact Us</h3>
             <p>📧 tidyspacesug@gmail.com</p>
-            <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-button">
-              📱 Call Us
-            </a>
+            <p>📱 +256 788010587</p>
           </div>
           <div className="footer-section">
             <h3>Working Hours</h3>
@@ -165,12 +139,6 @@ function Home() {
           <p>© 2026 Tidy Spaces. All rights reserved.</p>
         </div>
       </footer>
-      {lightboxOpen && (
-        <div className="lightbox" onClick={() => setLightboxOpen(false)}>
-          <span className="lightbox-close">&times;</span>
-          <img src={lightboxImage} alt="Full size" className="lightbox-image" />
-        </div>
-      )}
     </div>
   )
 }
