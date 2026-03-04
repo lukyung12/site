@@ -9,7 +9,7 @@ function Contact() {
     message: ''
   })
   const [status, setStatus] = useState('')
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
@@ -58,7 +58,7 @@ function Contact() {
       <header className="header">
         <div className="header-content">
           <Link to="/" className="logo-container">
-            <img src="/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
+            <img src="/logo/cathy,s logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
             <h1 className="logo">TIDY SPACES</h1>
           </Link>
         </div>
