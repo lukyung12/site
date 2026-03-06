@@ -20,7 +20,7 @@ function Home() {
  const sliderImages = [
     '/images/ceiling.jpeg',
     '/images/pavers.jpeg',      // ⬅️ rename from "pavers 1.jpeg" to avoid spaces
-    '/images/house.jpg', // ⬅️ rename from "house 2.jpeg" to avoid spaces  
+    '/images/House.jpg', // ⬅️ rename from "house 2.jpeg" to avoid spaces  
     '/images/rug.jpg',
     '/images/cleaners.jpeg',
   ];
