@@ -18,7 +18,7 @@ function Home() {
   }, [darkMode]);
   
  const sliderImages = [
-    '/images/ceiling.jpeg',
+    '/site/images/ceiling.jpeg',
     '/images/pavers.jpeg',      // ⬅️ rename from "pavers 1.jpeg" to avoid spaces
     '/images/House.jpg', // ⬅️ rename from "house 2.jpeg" to avoid spaces  
     '/images/rug.jpg',
@@ -46,7 +46,7 @@ function Home() {
       <header className="header">
         <div className="header-content">
           <div className="logo-container">
-            <img src="/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
+            <img src="/site/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
             <h1 className="logo">TIDY SPACES</h1>
           </div>
         </div>
