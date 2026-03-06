@@ -623,23 +623,105 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero-content {
-    grid-template-columns: 1fr;
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .logo-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .header {
+    padding: 20px 15px;
+  }
+  
+  .hero {
+    padding: 30px 15px;
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
   }
   
   .nav-fixed {
-    flex-direction: column;
-    top: 140px;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    background: var(--bg-secondary);
+    padding: 12px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .nav-fixed a {
+    font-size: 0.85rem;
+    padding: 8px 12px;
   }
   
   .theme-toggle-fixed {
-    right: 20px;
-    top: 80px;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
   }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .services, .about, .contact {
+    padding: 50px 15px;
+  }
+  
+  .service-card {
+    padding: 25px;
+  }
+  
+  .contact-container {
+    margin: 50px auto;
+    padding: 25px;
+  }
+  
+  .footer {
+    padding-bottom: 80px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .hero-images {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .hero-image {
+    height: 300px;
+  }
+  
+  .contact-mini-pill {
+    padding: 10px 16px;
+    gap: 8px;
+  }
+  
+  .phone-icon {
+    font-size: 1.4rem;
+  }
+  
+  .phone-label {
+    font-size: 0.85rem;
+  }
+}
 
 .hero-images {
   width: min(720px, 100%);
