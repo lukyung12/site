@@ -6,13 +6,14 @@ import Home from './Home'
 import Contact from './Contact'
 import './index.css'
 
-const basename = '/site'
+const basename = '/'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/site/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>

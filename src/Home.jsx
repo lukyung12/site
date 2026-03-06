@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import ImageSlider from './components/ImageSlider';
 
 function Home() {
   const [darkMode, setDarkMode] = useState(true)
@@ -13,8 +14,17 @@ function Home() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light')
-  }, [darkMode])
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+  
+ const sliderImages = [
+    '/images/ceiling.jpeg',
+    '/images/pavers.jpeg',      // ⬅️ rename from "pavers 1.jpeg" to avoid spaces
+    '/images/house.jpg', // ⬅️ rename from "house 2.jpeg" to avoid spaces  
+    '/images/rug.jpg',
+    '/images/cleaners.jpeg',
+  ];
+
 
   return (
     <div className="app-container">
@@ -25,9 +35,6 @@ function Home() {
         <div className="bubble"></div>
         <div className="bubble"></div>
       </div>
-      <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
-        📱 +256 788010587
-      </a>
       <button className="theme-toggle-fixed" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
         {darkMode ? '☀️' : '🌙'}
       </button>
@@ -39,7 +46,7 @@ function Home() {
       <header className="header">
         <div className="header-content">
           <div className="logo-container">
-            <img src="/logo/cathy,s logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
+            <img src="/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
             <h1 className="logo">TIDY SPACES</h1>
           </div>
         </div>
@@ -51,9 +58,8 @@ function Home() {
             <p className="hero-subtitle">Tidy Spaces (U) Ltd is a full-service cleaning company committed to delivering top notch cleaning solutions to both residential and commercial clients. We offer a wide range of services customized to meet the unique needs of our clients with plans for regional expansion </p>
             <Link to="/contact" className="cta-button">Get a Free Quote</Link>
           </div>
-          <div className="hero-images">
-            <img src="/images/ceiling.jpeg" alt="Ceiling cleaning" className="hero-image" />
-            <img src="/images/pavers 1.jpeg" alt="Paver cleaning" className="hero-image" />
+  <div className="hero-images">
+            <ImageSlider images={sliderImages} interval={4000} transitionMs={700} />
           </div>
         </div>
       </section>
@@ -121,7 +127,7 @@ function Home() {
           <div className="footer-section">
             <h3>Contact Us</h3>
             <p>📧 tidyspacesug@gmail.com</p>
-            <p>📱 +256 788010587</p>
+            <p className="phone-bold">📱 <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer">+256 788010587</a></p>
           </div>
           <div className="footer-section">
             <h3>Working Hours</h3>
