@@ -172,8 +172,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .logo-image {
@@ -435,6 +433,61 @@ body {
 .contact-page {
   min-height: 100vh;
   position: relative;
+  background-image: url('/images/cleaners.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.contact-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+.contact-page .header {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-page .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.contact-page .logo {
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  font-weight: 800;
+}
+
+.contact-page .contact-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.contact-page .contact-container h1 {
+  color: #1a0b2e;
+  font-weight: 800;
+}
+
+.contact-page .contact-intro {
+  color: #1a0b2e;
+  font-weight: 500;
+}
+
+.contact-page .form-group label {
+  font-weight: 700;
+  color: #1a0b2e;
 }
 
 .particles {
@@ -466,16 +519,15 @@ body {
 }
 
 .home-link-fixed {
-  position: fixed;
-  top: 20px;
-  left: 20px;
+  position: static;
+  display: inline-block;
   background: var(--accent);
   color: white;
-  padding: 10px 20px;
-  border-radius: 25px;
+  padding: 6px 16px;
+  border-radius: 20px;
   text-decoration: none;
   font-weight: 600;
-  z-index: 1000;
+  font-size: 0.85rem;
   transition: transform 0.3s;
 }
 
@@ -602,4 +654,76 @@ body {
   .hero-content {
     grid-template-columns: 1fr 1fr; /* text | slider */
   }
+  
+.contact-page .theme-toggle-fixed {
+  right: 20px;       /* override previous right: 200px */
+  top: 20px;
+}
+
+ padding: 6px 12px;          /* smaller */
+  font-size: 0.9rem;          /* smaller text */
+  border-radius: 20px;        /* slightly tighter pill */
+  z-index: 1001;              /* keep above content */
+  box-shadow: 0 3px 12px rgba(167, 139, 250, 0.4);
+  letter-spacing: 0.3px;
+}
+
+.contact-page .phone-number:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(167, 139, 250, 0.55);
+}
+
+@media (max-width: 480px) {
+  .contact-page .phone-number {
+    padding: 6px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+  }
+}
+  .contact-page .phone-number {
+    right: 20px;
+    top: 68px;            /* a touch closer on mobile */
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+  /* Header right side container */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Stack the toggle above the number */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* Make the theme toggle stay in the header (remove fixed positioning) */
+.header .theme-toggle-fixed {
+  position: relative;
+  right: 0;
+  top: 0;
+  margin-bottom: 4px;
+}
+
+/* New small contact pill */
+.contact-mini-pill {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
+  transition: transform 0.2s;
+}
+
+.contact-mini-pill:hover {
+  transform: scale(1.05);
+}
+
 }

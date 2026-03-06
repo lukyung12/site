@@ -9,19 +9,13 @@ function Contact() {
     message: ''
   })
   const [status, setStatus] = useState('')
-  const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
     if (theme) {
-      setDarkMode(theme === 'dark')
+      document.documentElement.setAttribute('data-theme', theme)
     }
   }, [])
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light')
-    localStorage.setItem('theme', darkMode ? 'dark' : 'light')
-  }, [darkMode])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -48,21 +42,26 @@ function Contact() {
         <div className="particle"></div>
         <div className="particle"></div>
       </div>
-      <a href="https://wa.me/256788010587" target="_blank" rel="noopener noreferrer" className="phone-number">
-        📱 +256 788010587
-      </a>
-      <button className="theme-toggle-fixed" onClick={() => setDarkMode(!darkMode)} aria-label="Toggle theme">
-        {darkMode ? '☀️' : '🌙'}
-      </button>
-      <Link to="/" className="home-link-fixed">Home</Link>
       <header className="header">
         <div className="header-content">
-          <Link to="/" className="logo-container">
-            <img src="/site/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
-            <h1 className="logo">TIDY SPACES</h1>
-          </Link>
-        </div>
-      </header>
+    <div className="logo-container">
+      <img src="/site/logo/logo.jpeg" alt="Tidy Spaces Logo" className="logo-image" />
+      <h1 className="logo">TIDY SPACES</h1>
+    </div>
+    
+    <a 
+        href="https://wa.me/256788010587" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="contact-mini-pill"
+      >
+        📱 +256 788010587
+      </a>
+  </div>
+  <div style={{ paddingLeft: '20px', marginTop: '15px' }}>
+    <Link to="/" className="home-link-fixed">Home</Link>
+  </div>
+</header>
       <div className="contact-container">
         <h1>Contact Us</h1>
         <p className="contact-intro">
