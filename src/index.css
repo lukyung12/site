@@ -5,25 +5,25 @@
 }
 
 :root {
-  --bg-primary: linear-gradient(135deg, #0a0118 0%, #1a0b2e 100%);
-  --bg-secondary: rgba(255, 255, 255, 0.1);
+  --bg-primary: linear-gradient(135deg, #0a2540 0%, #1e3a5f 100%);
+  --bg-secondary: rgba(100, 200, 255, 0.15);
   --text-primary: #ffffff;
-  --text-secondary: #e0e0e0;
-  --accent: #a78bfa;
-  --accent-hover: #8b5cf6;
-  --card-bg: rgba(255, 255, 255, 0.15);
-  --header-bg: linear-gradient(135deg, #0a0118 0%, #1a0b2e 100%);
+  --text-secondary: #e8f4f8;
+  --accent: #00d4ff;
+  --accent-hover: #00b8e6;
+  --card-bg: rgba(100, 200, 255, 0.2);
+  --header-bg: linear-gradient(135deg, #0a2540 0%, #1e3a5f 100%);
 }
 
 [data-theme="light"] {
-  --bg-primary: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+  --bg-primary: linear-gradient(135deg, #e0f7ff 0%, #b3e5fc 100%);
   --bg-secondary: rgba(255, 255, 255, 0.95);
-  --text-primary: #064e3b;
-  --text-secondary: #047857;
-  --accent: #059669;
-  --accent-hover: #047857;
+  --text-primary: #0a2540;
+  --text-secondary: #1e3a5f;
+  --accent: #0097cc;
+  --accent-hover: #007ba3;
   --card-bg: #ffffff;
-  --header-bg: linear-gradient(135deg, #047857 0%, #065f46 100%);
+  --header-bg: linear-gradient(135deg, #00b8e6 0%, #0097cc 100%);
 }
 
 body {
@@ -189,7 +189,7 @@ body {
 }
 
 .hero {
-  padding: 60px 20px;
+  padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
@@ -198,7 +198,7 @@ body {
 .hero-content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -215,17 +215,19 @@ body {
 .hero-title {
   font-size: 3rem;
   margin-bottom: 20px;
-  color: var(--text-primary);
-  font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-weight: 900;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
-  color: var(--text-primary);
+  color: #e8f4f8;
   margin-bottom: 30px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.8;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button {
@@ -248,14 +250,15 @@ body {
 
 .hero-images {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   width: 100%;
+  max-width: 600px;
 }
 
 .hero-image {
   width: 100%;
-  height: 300px;
+  height: 400px;
   object-fit: cover;
   border-radius: 15px;
   transition: opacity 0.5s ease-in-out;
@@ -313,6 +316,8 @@ body {
   font-size: 2.5rem;
   margin-bottom: 50px;
   color: var(--text-primary);
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .services-grid {
@@ -711,19 +716,56 @@ body {
 
 /* New small contact pill */
 .contact-mini-pill {
-  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #1a1a1a;
+  padding: 14px 28px;
+  border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
-  transition: transform 0.2s;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+  transition: all 0.3s ease;
+  border: 3px solid #fff;
+  font-weight: 700;
 }
 
 .contact-mini-pill:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.8);
+  background: linear-gradient(135deg, #FFED4E 0%, #FFB84D 100%);
+}
+
+.phone-icon {
+  font-size: 1.8rem;
+  animation: ring 2s ease-in-out infinite;
+}
+
+@keyframes ring {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(-10deg); }
+  20%, 40% { transform: rotate(10deg); }
+}
+
+.phone-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.3;
+}
+
+.phone-label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.phone-number {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 }

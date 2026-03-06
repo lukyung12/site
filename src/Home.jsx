@@ -39,8 +39,8 @@ function Home() {
         {darkMode ? '☀️' : '🌙'}
       </button>
       <nav className="nav-fixed">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); }}>Services</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}>About</a>
         <Link to="/contact">Contact</Link>
       </nav>
       <header className="header">

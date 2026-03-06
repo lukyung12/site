@@ -55,7 +55,10 @@ function Contact() {
         rel="noopener noreferrer" 
         className="contact-mini-pill"
       >
-        📱 +256 788010587
+        <span className="phone-icon">📞</span>
+        <span className="phone-text">
+          <span className="phone-label">Call Us Now</span>
+        </span>
       </a>
   </div>
   <div style={{ paddingLeft: '20px', marginTop: '15px' }}>
